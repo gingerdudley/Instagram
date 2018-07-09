@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "Parse.h"
+#import "AppDelegate.h"
 
 @interface HomeViewController ()
 
@@ -23,6 +25,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)didTapLogout:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //switched home view controller
+        HomeViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        appDelegate.window.rootViewController = loginViewController;
+    }];
+    
+}
+
 
 /*
 #pragma mark - Navigation

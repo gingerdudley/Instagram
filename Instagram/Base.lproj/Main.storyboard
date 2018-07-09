@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,11 +87,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hCl-1p-2OY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Instagram" id="qMs-fu-JbF"/>
+                    <navigationItem key="navigationItem" title="Instagram" id="qMs-fu-JbF">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="ouy-g9-5Em">
+                            <connections>
+                                <action selector="didTapLogout:" destination="8A5-tE-n0j" id="gUs-fx-bPW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="feed_tab" id="tZZ-rM-Vjo"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QC-e9-qEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834" y="26"/>
+            <point key="canvasLocation" x="2270" y="26"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dO0-PI-Par">
@@ -109,7 +116,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAR-9T-cB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="26"/>
+            <point key="canvasLocation" x="1454" y="26"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feed_tab" width="25" height="25"/>
+    </resources>
 </document>
