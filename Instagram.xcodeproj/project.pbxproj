@@ -15,6 +15,8 @@
 		4C2024AB20F40A6900E6E98D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2024AA20F40A6900E6E98D /* main.m */; };
 		4C2024B520F40A6900E6E98D /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2024B420F40A6900E6E98D /* InstagramTests.m */; };
 		4C2024C020F40A6900E6E98D /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2024BF20F40A6900E6E98D /* InstagramUITests.m */; };
+		4CDAC15E20F417B300B3E7D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC15D20F417B300B3E7D4 /* LoginViewController.m */; };
+		4CDAC16120F41C1D00B3E7D4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC16020F41C1D00B3E7D4 /* HomeViewController.m */; };
 		675B8E9927AECA4D11944653 /* libPods-InstagramTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9259AE3A48B712902170EA9D /* libPods-InstagramTests.a */; };
 		CCB8012921CD021AA980D9D7 /* libPods-Instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAAD9B8983CD4690BD432CD1 /* libPods-Instagram.a */; };
 		F22C7EF8186A2BECCE45EFF0 /* libPods-InstagramUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE2669D098CC3CAF6AA0DD7 /* libPods-InstagramUITests.a */; };
@@ -54,6 +56,10 @@
 		4C2024BB20F40A6900E6E98D /* InstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2024BF20F40A6900E6E98D /* InstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITests.m; sourceTree = "<group>"; };
 		4C2024C120F40A6900E6E98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CDAC15C20F417B300B3E7D4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		4CDAC15D20F417B300B3E7D4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4CDAC15F20F41C1D00B3E7D4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4CDAC16020F41C1D00B3E7D4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		80B7CAB6BD5429A21FC581DD /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		8EE2669D098CC3CAF6AA0DD7 /* libPods-InstagramUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9259AE3A48B712902170EA9D /* libPods-InstagramTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstagramTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +139,10 @@
 				4C20249E20F40A6900E6E98D /* ViewController.h */,
 				4C20249F20F40A6900E6E98D /* ViewController.m */,
 				4C2024A120F40A6900E6E98D /* Main.storyboard */,
+				4CDAC15F20F41C1D00B3E7D4 /* HomeViewController.h */,
+				4CDAC16020F41C1D00B3E7D4 /* HomeViewController.m */,
+				4CDAC15D20F417B300B3E7D4 /* LoginViewController.m */,
+				4CDAC15C20F417B300B3E7D4 /* LoginViewController.h */,
 				4C2024A420F40A6900E6E98D /* Assets.xcassets */,
 				4C2024A620F40A6900E6E98D /* LaunchScreen.storyboard */,
 				4C2024A920F40A6900E6E98D /* Info.plist */,
@@ -381,8 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CDAC15E20F417B300B3E7D4 /* LoginViewController.m in Sources */,
 				4C2024A020F40A6900E6E98D /* ViewController.m in Sources */,
 				4C2024AB20F40A6900E6E98D /* main.m in Sources */,
+				4CDAC16120F41C1D00B3E7D4 /* HomeViewController.m in Sources */,
 				4C20249D20F40A6900E6E98D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,7 +22,7 @@
         
         configuration.applicationId = @"myAppId";
         configuration.clientKey = @"myMasterKey";
-        configuration.server = @"http://gingersinstagram.herokuapp.com/parse";
+        configuration.server = @"https://gingersinstagram.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
