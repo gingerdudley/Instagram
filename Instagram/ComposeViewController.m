@@ -7,6 +7,8 @@
 //
 
 #import "ComposeViewController.h"
+#import "Parse.h"
+#import "AppDelegate.h"
 
 @interface ComposeViewController ()
 
@@ -22,6 +24,22 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)didTapCancel:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //switched home view controller
+    ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
+    appDelegate.window.rootViewController = homeViewController;
+}
+- (IBAction)didTapShare:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //switched home view controller
+    ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
+    appDelegate.window.rootViewController = homeViewController;
+    
 }
 
 /*

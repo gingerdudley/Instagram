@@ -71,7 +71,6 @@
 - (IBAction)didTapSignup:(id)sender {
     //calling the register user function if they ask to sign up
     if([self.usernameTextBox.text isEqual:@""]){
-        //NSLog(@"in here");
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Email required"
                                                                        message:@"Please enter your email address"
                                                                 preferredStyle:(UIAlertControllerStyleAlert)];
