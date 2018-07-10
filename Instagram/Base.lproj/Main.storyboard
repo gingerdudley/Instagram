@@ -192,6 +192,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionTextField" destination="GrD-WU-Pyf" id="eK0-h5-JtC"/>
                         <outlet property="uploadedImage" destination="T17-Qj-mwc" id="uiW-Ro-zg7"/>
                     </connections>
                 </viewController>

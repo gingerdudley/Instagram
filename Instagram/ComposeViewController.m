@@ -9,11 +9,18 @@
 #import "ComposeViewController.h"
 #import "Parse.h"
 #import "AppDelegate.h"
+#import "Post.h"
+
+//trying to debug query cancelled
+//#import ""
 
 @interface ComposeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *uploadedImage;
 @property (strong, nonatomic) UIImage *savedImage;
+@property (weak, nonatomic) IBOutlet UITextField *captionTextField;
+@property (strong, nonatomic) NSString *captionText;
+//@property (strong, nonatomic) UIImage
 
 @end
 
@@ -39,6 +46,10 @@
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
     
+    //move this to did Tap share??
+    
+    //self.captionText = self.captionTextField.text;
+    
     
 }
 
@@ -55,33 +66,30 @@
     appDelegate.window.rootViewController = homeViewController;
 }
 - (IBAction)didTapShare:(id)sender {
+    
+    //pass to postUserImage
+    [Post postUserImage:self.savedImage withCaption:self.captionTextField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        NSLog(@"posting picture....");
+        if (error) {
+            NSLog(@"error posting picture");
+        }
+        else{
+            NSLog(@"successfully posted picture");
+        }
+    }];
+    
+    
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //switched home view controller
     ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
     appDelegate.window.rootViewController = homeViewController;
     
+    //easier way to change modal view controller
+    
+    
+    
 }
-
-//- (IBAction)didTapImage:(id)sender {
-//    NSLog(@"in here");
-//    //adding this here but might need to move it to after the user taps on the image
-//    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-//    imagePickerVC.delegate = self;
-//    imagePickerVC.allowsEditing = YES;
-//    //imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    }
-//    else {
-//        NSLog(@"Camera 🚫 available so we will use photo library instead");
-//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//    }
-//    
-//    [self presentViewController:imagePickerVC animated:YES completion:nil];
-//    
-//}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
@@ -93,7 +101,9 @@
     
     // Do something with the images (based on your use case)
     self.savedImage = originalImage;
+    //self.savedImage = editedImage;
     self.uploadedImage.image = self.savedImage;
+    //self.uploadedImage.image = originalImage;
     
     
     // Dismiss UIImagePickerController to go back to your original view controller
