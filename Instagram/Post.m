@@ -18,6 +18,7 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+@dynamic createdAt;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -32,6 +33,14 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
+    
+    
+    
+    
+    
+//    NSString *createdAtOriginalString = createdAt;
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
 
     [newPost saveInBackgroundWithBlock: completion];
 

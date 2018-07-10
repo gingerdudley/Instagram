@@ -16,13 +16,19 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+
 //adding refresh control
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSArray *posts;
 
+//adding a header to the cell
+
+
 @end
 
 @implementation HomeViewController
+
+//NSString *HeaderViewIdentifier = @"TableViewHeaderView";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,37 +41,30 @@
     [self.tableView insertSubview:refreshControl atIndex:0];
     
     [self fetchPost: refreshControl];
+    //NSLog(@"%@", self.posts[0][@"_created_at"]);
     
 }
 
 - (void) fetchPost:(UIRefreshControl *) refreshControl{
-    //NSLog(@"fetch");
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     query.limit = 20;
     [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    //adding a like key
+    [query includeKey:@"likeCount"];
+    
+    [query includeKey:@"createdAt"];
+    //adding a created at string
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-        //NSLog(@"in closure");
         if (posts != nil) {
-            // do something with the array of object returned by the call
             self.posts = posts;
-            //NSLog(@"%lu", posts.count);
-            /*for (Post *post in posts) {
-                NSLog(@"%@", post.caption);
-            }*/
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
-        
         [self.tableView reloadData];
         [refreshControl endRefreshing];
-        
-        
-    }];
-    
-    //NSLog(@"past closure");
-     
-    
+    }];    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +81,18 @@
     cell.post = self.posts[indexPath.row];
     return cell;
 }
+
+//adding the customizable header
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HeaderViewIdentifier];
+//    //header.textLabel.text = [self.posts[section] firstObject];
+//    return header;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 30;
+//}
+
 
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
