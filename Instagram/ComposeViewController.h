@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ComposeViewController : UIViewController
+//this could be in the wrong view controller- play around and see
+@interface ComposeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end

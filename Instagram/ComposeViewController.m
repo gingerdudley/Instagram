@@ -12,6 +12,9 @@
 
 @interface ComposeViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *uploadedImage;
+@property (strong, nonatomic) UIImage *savedImage;
+
 @end
 
 @implementation ComposeViewController
@@ -19,6 +22,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //adding this here but might need to move it to after the user taps on the image
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    //imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +62,45 @@
     appDelegate.window.rootViewController = homeViewController;
     
 }
+
+//- (IBAction)didTapImage:(id)sender {
+//    NSLog(@"in here");
+//    //adding this here but might need to move it to after the user taps on the image
+//    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+//    imagePickerVC.delegate = self;
+//    imagePickerVC.allowsEditing = YES;
+//    //imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    }
+//    else {
+//        NSLog(@"Camera 🚫 available so we will use photo library instead");
+//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    }
+//    
+//    [self presentViewController:imagePickerVC animated:YES completion:nil];
+//    
+//}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    
+    //editing the image???? 
+    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    // Do something with the images (based on your use case)
+    self.savedImage = originalImage;
+    self.uploadedImage.image = self.savedImage;
+    
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 /*
 #pragma mark - Navigation
