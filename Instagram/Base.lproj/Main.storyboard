@@ -116,7 +116,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="377.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="WOH-lM-6BC" customClass="PFImageView">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="WOH-lM-6BC" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
                                                     <color key="backgroundColor" red="0.41299049539999999" green="0.66591452520000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
