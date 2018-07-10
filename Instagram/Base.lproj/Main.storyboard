@@ -109,26 +109,43 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="378" id="tng-pH-WLW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PostCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="378" id="tng-pH-WLW" customClass="PostTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="378"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tng-pH-WLW" id="UIP-ma-FY3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="377.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WOH-lM-6BC">
+                                                <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="WOH-lM-6BC" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.41299049539999999" green="0.66591452520000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="375" id="BUb-6k-lox"/>
+                                                        <constraint firstAttribute="height" constant="323" id="JgE-Yy-lA0"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq2-CJ-XjW">
-                                                    <rect key="frame" x="23" y="346" width="337" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq2-CJ-XjW">
+                                                    <rect key="frame" x="0.0" y="331" width="375" height="38.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="xq2-CJ-XjW" secondAttribute="trailing" id="373-xZ-4DS"/>
+                                                <constraint firstItem="WOH-lM-6BC" firstAttribute="top" secondItem="UIP-ma-FY3" secondAttribute="top" id="Gqh-sr-oZp"/>
+                                                <constraint firstItem="xq2-CJ-XjW" firstAttribute="leading" secondItem="UIP-ma-FY3" secondAttribute="leading" id="T4M-tr-qSI"/>
+                                                <constraint firstItem="xq2-CJ-XjW" firstAttribute="top" secondItem="WOH-lM-6BC" secondAttribute="bottom" constant="8" id="Tx8-jF-EHb"/>
+                                                <constraint firstAttribute="trailing" secondItem="WOH-lM-6BC" secondAttribute="trailing" id="isf-f2-pkh"/>
+                                                <constraint firstItem="WOH-lM-6BC" firstAttribute="leading" secondItem="UIP-ma-FY3" secondAttribute="leading" id="kDS-Z7-2Go"/>
+                                                <constraint firstItem="xq2-CJ-XjW" firstAttribute="top" secondItem="WOH-lM-6BC" secondAttribute="bottom" constant="8" id="kVa-0L-qdo"/>
+                                                <constraint firstAttribute="bottom" secondItem="xq2-CJ-XjW" secondAttribute="bottom" constant="8" id="mDg-Q2-nE5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="xq2-CJ-XjW" id="vYK-oS-hb3"/>
+                                            <outlet property="postImage" destination="WOH-lM-6BC" id="IhG-hA-VCd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -149,6 +166,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="mW0-ld-bUk" id="UrD-Df-cBl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4QC-e9-qEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,6 +295,7 @@
     </scenes>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
+        <image name="image_placeholder" width="375" height="375"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>
 </document>

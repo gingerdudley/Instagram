@@ -15,6 +15,7 @@
 		4C2024AB20F40A6900E6E98D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2024AA20F40A6900E6E98D /* main.m */; };
 		4C2024B520F40A6900E6E98D /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2024B420F40A6900E6E98D /* InstagramTests.m */; };
 		4C2024C020F40A6900E6E98D /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2024BF20F40A6900E6E98D /* InstagramUITests.m */; };
+		4CB62CE420F524C7009B2ADD /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB62CE320F524C7009B2ADD /* PostTableViewCell.m */; };
 		4CDAC15E20F417B300B3E7D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC15D20F417B300B3E7D4 /* LoginViewController.m */; };
 		4CDAC16120F41C1D00B3E7D4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC16020F41C1D00B3E7D4 /* HomeViewController.m */; };
 		4CDAC16420F4299900B3E7D4 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC16320F4299900B3E7D4 /* ComposeViewController.m */; };
@@ -59,6 +60,8 @@
 		4C2024BB20F40A6900E6E98D /* InstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C2024BF20F40A6900E6E98D /* InstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITests.m; sourceTree = "<group>"; };
 		4C2024C120F40A6900E6E98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CB62CE220F524C7009B2ADD /* PostTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		4CB62CE320F524C7009B2ADD /* PostTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		4CDAC15C20F417B300B3E7D4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4CDAC15D20F417B300B3E7D4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4CDAC15F20F41C1D00B3E7D4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				4C20249E20F40A6900E6E98D /* ViewController.h */,
 				4C20249F20F40A6900E6E98D /* ViewController.m */,
 				4C2024A120F40A6900E6E98D /* Main.storyboard */,
+				4CB62CE220F524C7009B2ADD /* PostTableViewCell.h */,
+				4CB62CE320F524C7009B2ADD /* PostTableViewCell.m */,
 				4CDAC16820F4394900B3E7D4 /* Post.h */,
 				4CDAC16920F4394900B3E7D4 /* Post.m */,
 				4CDAC15C20F417B300B3E7D4 /* LoginViewController.h */,
@@ -335,10 +340,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Instagram/Pods-Instagram-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -407,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CDAC15E20F417B300B3E7D4 /* LoginViewController.m in Sources */,
+				4CB62CE420F524C7009B2ADD /* PostTableViewCell.m in Sources */,
 				4C2024A020F40A6900E6E98D /* ViewController.m in Sources */,
 				4C2024AB20F40A6900E6E98D /* main.m in Sources */,
 				4CDAC16420F4299900B3E7D4 /* ComposeViewController.m in Sources */,

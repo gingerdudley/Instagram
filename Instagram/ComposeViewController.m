@@ -76,6 +76,9 @@
         else{
             NSLog(@"successfully posted picture");
         }
+        //[self.view endEditing:YES];
+        //[self.captionTextField resignFirstResponder];
+        
     }];
     
     
@@ -84,6 +87,8 @@
     //switched home view controller
     ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
     appDelegate.window.rootViewController = homeViewController;
+    
+    [[self view] endEditing:YES];
     
     //easier way to change modal view controller
     
