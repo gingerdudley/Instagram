@@ -7,7 +7,9 @@
 //
 
 #import "ProfileHeaderView.h"
+//#import "Post.h"
 
 @implementation ProfileHeaderView
+
 
 @end

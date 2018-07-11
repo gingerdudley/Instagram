@@ -59,7 +59,7 @@
     
     //might need to ass this back in later so the query has the full details
     [query orderByDescending:@"createdAt"];
-    //[query includeKey:@"author"];
+    [query includeKey:@"author"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
@@ -96,7 +96,9 @@
     if( kind == UICollectionElementKindSectionHeader){
         header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"ProfileHeaderView" forIndexPath:indexPath];
         
-        //header.testerLabel.text = @"my name is ginger";
+        header.postNumberLabel.text = [[NSString stringWithFormat:@"%lu", self.posts.count] stringByAppendingString:@" posts"];
+        header.usernameLabel.text = [PFUser currentUser].username;
+        
     }
     return header;
 }

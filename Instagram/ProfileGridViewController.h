@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "Post.h"
 
 @interface ProfileGridViewController : UIViewController
+
+//@property (weak, nonatomic) Post *post;
 
 @end

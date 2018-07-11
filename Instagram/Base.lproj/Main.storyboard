@@ -375,6 +375,10 @@
                                             <state key="normal" title="Edit Profile"/>
                                         </button>
                                     </subviews>
+                                    <connections>
+                                        <outlet property="postNumberLabel" destination="tJT-hB-xJ2" id="7gB-QE-31f"/>
+                                        <outlet property="usernameLabel" destination="gga-6O-T1m" id="uQg-aR-81F"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
