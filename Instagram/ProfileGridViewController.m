@@ -9,6 +9,7 @@
 #import "ProfileGridViewController.h"
 #include "Parse.h"
 #include "ProfilePostCell.h"
+#import "ProfileHeaderView.h"
 
 @interface ProfileGridViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -32,7 +33,8 @@
     CGFloat postersPerline = 3;
     
     CGFloat itemWidth = self.collectionView.frame.size.width / postersPerline;
-    CGFloat itemHeight = itemWidth * 1.5;
+    //CGFloat itemHeight = itemWidth * 1.5;
+    CGFloat itemHeight = itemWidth * 1.25;
     layout.itemSize = CGSizeMake( itemWidth, itemHeight);
 }
 
@@ -82,33 +84,22 @@
     ProfilePostCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProfilePostCell" forIndexPath:indexPath];
     
     cell.post = self.posts[indexPath.item];
-    //adding immage to the image view
-    //NSLog(@"caption");
-    
-    //cell.postImage.image = cell.post.image;
-    //adding image
-    //cell.postImage.image = [cell getPFFileFromImage:image];
-    //cell.postImage.image = cell.post.image;
-    //cell.postImage.image = cell.post:@"image";
-    
-    // Configure the cell
     
     return cell;
 }
 
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    //UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-//
-//    ProfilePostCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProfilePostCell" forIndexPath:indexPath];
-//
-//    cell.post = self.posts[indexPath.item];
-//    //adding immage to the image view
-//    cell.postImage.image = cell.post.image;
-//
-//    // Configure the cell
-//
-//    return cell;
-//}
+//adding the resuable header to the collection view
+//- (UICollectionViewReusableView *)collectionView:
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    ProfileHeaderView *header = nil;
+    if( kind == UICollectionElementKindSectionHeader){
+        header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"ProfileHeaderView" forIndexPath:indexPath];
+        
+        //header.testerLabel.text = @"my name is ginger";
+    }
+    return header;
+}
 
 
 /*

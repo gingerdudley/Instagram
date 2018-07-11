@@ -99,7 +99,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    //UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     
     //editing the image???? 
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
