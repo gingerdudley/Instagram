@@ -15,5 +15,6 @@
 //@property (weak, nonatomic) IBOutlet UILabel *testerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePictureImageView;
 
 @end

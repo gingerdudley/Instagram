@@ -338,7 +338,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFk-PW-W15">
-                                            <rect key="frame" x="8" y="8" width="96" height="90"/>
+                                            <rect key="frame" x="10" y="10" width="81" height="81"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ginger Dudley" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gga-6O-T1m">
@@ -377,6 +377,7 @@
                                     </subviews>
                                     <connections>
                                         <outlet property="postNumberLabel" destination="tJT-hB-xJ2" id="7gB-QE-31f"/>
+                                        <outlet property="profilePictureImageView" destination="EFk-PW-W15" id="fgz-aC-bK7"/>
                                         <outlet property="usernameLabel" destination="gga-6O-T1m" id="uQg-aR-81F"/>
                                     </connections>
                                 </collectionReusableView>

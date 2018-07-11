@@ -98,6 +98,14 @@
         
         header.postNumberLabel.text = [[NSString stringWithFormat:@"%lu", self.posts.count] stringByAppendingString:@" posts"];
         header.usernameLabel.text = [PFUser currentUser].username;
+        //making the profile picture a circle
+        header.profilePictureImageView.layer.cornerRadius = header.profilePictureImageView.frame.size.width / 2;
+        header.profilePictureImageView.clipsToBounds = YES;
+        //adding a border around the image view
+        header.profilePictureImageView.layer.borderWidth = 3.0f;
+        header.profilePictureImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        //header.profilePictureImageView.layer.borderColor = [UIColor colorWithRed:135 green:206 blue:250 alpha:1].CGColor;
+        
         
     }
     return header;
