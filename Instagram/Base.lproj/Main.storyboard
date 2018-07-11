@@ -459,6 +459,7 @@
                         <outlet property="captionLabel" destination="ZLq-yb-XTB" id="dbZ-ax-MLa"/>
                         <outlet property="likesLabel" destination="Dps-WD-CHM" id="x5m-di-gh4"/>
                         <outlet property="postImageView" destination="MsX-z0-fYg" id="a1J-9y-lWo"/>
+                        <outlet property="profilePicImage" destination="z1c-l0-1Jv" id="o9R-Ju-2Gu"/>
                         <outlet property="topUsernameLabel" destination="qUY-v6-P1h" id="uSI-uy-3xB"/>
                     </connections>
                 </viewController>

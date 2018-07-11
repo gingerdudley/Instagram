@@ -27,6 +27,10 @@
     self.bottomUsernameLabel.text = self.post.author.username;
     self.captionLabel.text = self.post.caption;
     self.likesLabel.text = [[NSString stringWithFormat:@"%@", self.post.likeCount] stringByAppendingString:@" likes"];
+    self.profilePicImage.layer.cornerRadius = self.profilePicImage.frame.size.width / 2;
+    self.profilePicImage.clipsToBounds = YES;
+    self.profilePicImage.layer.borderWidth = 3.0f;
+    self.profilePicImage.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
     
 }
