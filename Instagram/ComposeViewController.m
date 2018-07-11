@@ -62,7 +62,11 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //switched home view controller
-    ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
+    //ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
+    //appDelegate.window.rootViewController = homeViewController;
+    
+    //switching to the tab view controller
+    ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
     appDelegate.window.rootViewController = homeViewController;
 }
 - (IBAction)didTapShare:(id)sender {
@@ -85,7 +89,7 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //switched home view controller
-    ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"home"];
+    ComposeViewController *homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
     appDelegate.window.rootViewController = homeViewController;
     
     [[self view] endEditing:YES];
@@ -110,8 +114,6 @@
     self.uploadedImage.image = self.savedImage;
     //self.uploadedImage.image = originalImage;
     
-    
-    // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

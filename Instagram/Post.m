@@ -34,10 +34,9 @@
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
-    
-    
-    
-    
+    //adding bool for liked aspect
+    newPost.liked = NO;
+
 //    NSString *createdAtOriginalString = createdAt;
 //    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
@@ -60,5 +59,20 @@
     
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
+
+-(void) incrementLike{
+    //self.likeCount += 1;
+    self.likeCount = [NSNumber numberWithLong:[self.likeCount integerValue] +1 ];
+    [self saveInBackground];
+    //intValue +1;
+
+}
+
+-(void) decrementLike{
+    self.likeCount = [NSNumber numberWithLong:[self.likeCount integerValue] -1];
+    [self saveInBackground];
+}
+
+
 
 @end

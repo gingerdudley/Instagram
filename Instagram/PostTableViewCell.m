@@ -37,9 +37,38 @@
     [self.usernameTopLabel sizeToFit];
     [self.likeCountLabel sizeToFit];
     [self.captionLabel sizeToFit];
-    [self.postImage loadInBackground];
-    
+    [self.postImage loadInBackground];    
     
 }
+- (IBAction)didTapLike:(id)sender {
+    if (self.post.liked) {
+        [self.post decrementLike];
+        self.post.liked = NO;
+    }
+    else{
+        [self.post incrementLike];
+        self.post.liked = YES;
+    }
+   
+    //self.likeButton.imageView =
+    [self refreshData];
+}
+
+-(void)refreshData{
+    self.likeCountLabel.text = [[NSString stringWithFormat:@"%@", self.post.likeCount] stringByAppendingString:@" likes"];
+    
+    if (self.post.liked) {
+        UIImage *likeButtonImage = [UIImage imageNamed:@"filledheart"];
+        [self.likeButton setImage:likeButtonImage forState:UIControlStateNormal];
+    }
+    else{
+        UIImage *likeButtonImage = [UIImage imageNamed:@"emptyheart"];
+        [self.likeButton setImage:likeButtonImage forState:UIControlStateNormal];
+    }
+    
+    //[self.favoriteButton setImage:favoriteButtonImage forState:UIControlStateNormal];
+    
+}
+
 
 @end

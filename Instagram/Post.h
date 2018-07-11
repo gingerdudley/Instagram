@@ -23,8 +23,12 @@
 //adding a created at property
 //@property (nonatomic, strong) NSString *createdAt;
 @property (nonatomic, strong) NSDate *createdAt;
+@property (nonatomic) BOOL liked;
 //@property
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+
+-(void) incrementLike;
+-(void) decrementLike;
 
 @end

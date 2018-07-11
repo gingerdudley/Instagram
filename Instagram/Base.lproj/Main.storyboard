@@ -158,12 +158,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zh-AP-593">
-                                                    <rect key="frame" x="30" y="455" width="31" height="31"/>
+                                                    <rect key="frame" x="26" y="455" width="35" height="31"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="31" id="sMY-Q2-6r2"/>
+                                                        <constraint firstAttribute="width" constant="35" id="sMY-Q2-6r2"/>
                                                         <constraint firstAttribute="height" constant="31" id="w5I-4r-HU9"/>
                                                     </constraints>
-                                                    <state key="normal" image="empty heart"/>
+                                                    <state key="normal" image="emptyheart"/>
+                                                    <connections>
+                                                        <action selector="didTapLike:" destination="tng-pH-WLW" eventType="touchUpInside" id="xU3-JW-TLO"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 million likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUh-VR-H3e">
                                                     <rect key="frame" x="143" y="460" width="105" height="24"/>
@@ -194,7 +197,7 @@
                                                 <constraint firstItem="xq2-CJ-XjW" firstAttribute="top" secondItem="q7i-Qr-JHu" secondAttribute="bottom" constant="8" id="QaN-XD-g9q"/>
                                                 <constraint firstItem="1oH-cQ-NdQ" firstAttribute="leading" secondItem="MgF-ZT-4q0" secondAttribute="trailing" constant="8" id="QrG-pf-HsU"/>
                                                 <constraint firstItem="1oH-cQ-NdQ" firstAttribute="top" secondItem="UIP-ma-FY3" secondAttribute="top" constant="16" id="Qy7-cA-pD9"/>
-                                                <constraint firstItem="5Zh-AP-593" firstAttribute="leading" secondItem="UIP-ma-FY3" secondAttribute="leading" constant="30" id="UWi-D3-Pt2"/>
+                                                <constraint firstItem="5Zh-AP-593" firstAttribute="leading" secondItem="UIP-ma-FY3" secondAttribute="leading" constant="26" id="UWi-D3-Pt2"/>
                                                 <constraint firstItem="vUh-VR-H3e" firstAttribute="leading" secondItem="q7i-Qr-JHu" secondAttribute="trailing" constant="26" id="V34-dD-lA2"/>
                                                 <constraint firstAttribute="bottom" secondItem="xq2-CJ-XjW" secondAttribute="bottom" constant="8" id="XSF-mX-Lus"/>
                                                 <constraint firstItem="tfi-MZ-TDC" firstAttribute="leading" secondItem="UIP-ma-FY3" secondAttribute="leading" constant="13" id="YId-xT-U5l"/>
@@ -527,6 +530,7 @@
     <resources>
         <image name="comment" width="131" height="108"/>
         <image name="empty heart" width="685" height="547"/>
+        <image name="emptyheart" width="685" height="547"/>
         <image name="feed_tab" width="25" height="25"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="profile_tab" width="25" height="25"/>
