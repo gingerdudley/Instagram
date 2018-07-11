@@ -296,21 +296,56 @@
             </objects>
             <point key="canvasLocation" x="4040.8000000000002" y="25.637181409295355"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Grid View Controller-->
         <scene sceneID="esC-QH-09U">
             <objects>
-                <viewController id="QV1-dq-fEZ" sceneMemberID="viewController">
+                <viewController id="QV1-dq-fEZ" customClass="ProfileGridViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uaf-jU-DcL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MUs-Ee-Tj7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uLX-GE-L3s">
+                                    <size key="itemSize" width="129" height="184"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfilePostCell" id="gOg-bZ-1Qu" customClass="ProfilePostCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="184"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="129" height="184"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xc1-nn-Yn0" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="184"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="postImage" destination="Xc1-nn-Yn0" id="OTK-iC-7zM"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gwF-HI-c1d"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ibf-Sp-EAb"/>
+                    <connections>
+                        <outlet property="collectionView" destination="MUs-Ee-Tj7" id="YH6-5m-M9J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nL-lk-GR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5836" y="16"/>
+            <point key="canvasLocation" x="5836" y="15.742128935532236"/>
         </scene>
         <!--Home-->
         <scene sceneID="dO0-PI-Par">

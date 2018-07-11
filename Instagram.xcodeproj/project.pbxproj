@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C14EF4720F56E9500872802 /* ProfilePostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF4620F56E9500872802 /* ProfilePostCell.m */; };
+		4C14EF4A20F5C49800872802 /* ProfileGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF4920F5C49800872802 /* ProfileGridViewController.m */; };
 		4C20249D20F40A6900E6E98D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20249C20F40A6900E6E98D /* AppDelegate.m */; };
 		4C2024A020F40A6900E6E98D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20249F20F40A6900E6E98D /* ViewController.m */; };
 		4C2024A320F40A6900E6E98D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2024A120F40A6900E6E98D /* Main.storyboard */; };
@@ -19,7 +21,6 @@
 		4CDAC15E20F417B300B3E7D4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC15D20F417B300B3E7D4 /* LoginViewController.m */; };
 		4CDAC16120F41C1D00B3E7D4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC16020F41C1D00B3E7D4 /* HomeViewController.m */; };
 		4CDAC16420F4299900B3E7D4 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC16320F4299900B3E7D4 /* ComposeViewController.m */; };
-		4CDAC16720F429A600B3E7D4 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC16620F429A600B3E7D4 /* ProfileViewController.m */; };
 		4CDAC16A20F4394900B3E7D4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDAC16920F4394900B3E7D4 /* Post.m */; };
 		675B8E9927AECA4D11944653 /* libPods-InstagramTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9259AE3A48B712902170EA9D /* libPods-InstagramTests.a */; };
 		CCB8012921CD021AA980D9D7 /* libPods-Instagram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAAD9B8983CD4690BD432CD1 /* libPods-Instagram.a */; };
@@ -44,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C14EF4520F56E9500872802 /* ProfilePostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfilePostCell.h; sourceTree = "<group>"; };
+		4C14EF4620F56E9500872802 /* ProfilePostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilePostCell.m; sourceTree = "<group>"; };
+		4C14EF4820F5C49800872802 /* ProfileGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileGridViewController.h; sourceTree = "<group>"; };
+		4C14EF4920F5C49800872802 /* ProfileGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileGridViewController.m; sourceTree = "<group>"; };
 		4C20249820F40A6900E6E98D /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C20249B20F40A6900E6E98D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C20249C20F40A6900E6E98D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,8 +73,6 @@
 		4CDAC16020F41C1D00B3E7D4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		4CDAC16220F4299900B3E7D4 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		4CDAC16320F4299900B3E7D4 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
-		4CDAC16520F429A600B3E7D4 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		4CDAC16620F429A600B3E7D4 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4CDAC16820F4394900B3E7D4 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		4CDAC16920F4394900B3E7D4 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		80B7CAB6BD5429A21FC581DD /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,8 +164,10 @@
 				4CDAC16020F41C1D00B3E7D4 /* HomeViewController.m */,
 				4CDAC16220F4299900B3E7D4 /* ComposeViewController.h */,
 				4CDAC16320F4299900B3E7D4 /* ComposeViewController.m */,
-				4CDAC16520F429A600B3E7D4 /* ProfileViewController.h */,
-				4CDAC16620F429A600B3E7D4 /* ProfileViewController.m */,
+				4C14EF4820F5C49800872802 /* ProfileGridViewController.h */,
+				4C14EF4920F5C49800872802 /* ProfileGridViewController.m */,
+				4C14EF4520F56E9500872802 /* ProfilePostCell.h */,
+				4C14EF4620F56E9500872802 /* ProfilePostCell.m */,
 				4C2024A420F40A6900E6E98D /* Assets.xcassets */,
 				4C2024A620F40A6900E6E98D /* LaunchScreen.storyboard */,
 				4C2024A920F40A6900E6E98D /* Info.plist */,
@@ -419,10 +424,11 @@
 			files = (
 				4CDAC15E20F417B300B3E7D4 /* LoginViewController.m in Sources */,
 				4CB62CE420F524C7009B2ADD /* PostTableViewCell.m in Sources */,
+				4C14EF4A20F5C49800872802 /* ProfileGridViewController.m in Sources */,
+				4C14EF4720F56E9500872802 /* ProfilePostCell.m in Sources */,
 				4C2024A020F40A6900E6E98D /* ViewController.m in Sources */,
 				4C2024AB20F40A6900E6E98D /* main.m in Sources */,
 				4CDAC16420F4299900B3E7D4 /* ComposeViewController.m in Sources */,
-				4CDAC16720F429A600B3E7D4 /* ProfileViewController.m in Sources */,
 				4CDAC16120F41C1D00B3E7D4 /* HomeViewController.m in Sources */,
 				4C20249D20F40A6900E6E98D /* AppDelegate.m in Sources */,
 				4CDAC16A20F4394900B3E7D4 /* Post.m in Sources */,
