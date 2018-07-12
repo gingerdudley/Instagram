@@ -10,13 +10,16 @@
 #import "Post.h"
 #import "ParseUI/ParseUI.h"
 #import "Parse.h"
+#import "User.h"
 
 
 @interface PostTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+
+@property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
+//@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameTopLabel;
 @property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
@@ -26,6 +29,7 @@
 //@property (nonatomic, strong) PFUser *user;
 
 @property (nonatomic, strong) Post *post;
+@property User *user;
 
 
 @end

@@ -158,7 +158,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-ZT-4q0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-ZT-4q0" customClass="PFImageView">
                                                     <rect key="frame" x="8" y="8" width="56" height="56"/>
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
@@ -363,7 +363,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFk-PW-W15">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EFk-PW-W15" customClass="PFImageView">
                                             <rect key="frame" x="10" y="10" width="81" height="81"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -399,11 +399,14 @@
                                             <rect key="frame" x="190" y="68" width="75" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Edit Profile"/>
+                                            <connections>
+                                                <action selector="didTapEdit:" destination="QV1-dq-fEZ" eventType="touchUpInside" id="JCS-hp-hRN"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <connections>
                                         <outlet property="postNumberLabel" destination="tJT-hB-xJ2" id="7gB-QE-31f"/>
-                                        <outlet property="profilePictureImageView" destination="EFk-PW-W15" id="fgz-aC-bK7"/>
+                                        <outlet property="profilePictureImageView" destination="EFk-PW-W15" id="hcg-8Z-a1s"/>
                                         <outlet property="usernameLabel" destination="gga-6O-T1m" id="uQg-aR-81F"/>
                                     </connections>
                                 </collectionReusableView>
@@ -563,6 +566,6 @@
         <image name="whiteinstagram" width="1785" height="612"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3ru-d9-8N4"/>
+        <segue reference="J9J-uB-VFr"/>
     </inferredMetricsTieBreakers>
 </document>

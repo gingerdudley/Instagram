@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "Parse.h"
+#import "User.h"
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -31,7 +32,8 @@
 
 - (void)registerUser {
     // initialize a user object
-    PFUser *newUser = [PFUser user];
+    //PFUser *newUser = [PFUser user];
+    User *newUser = [User user];
     
     // set user properties
     newUser.username = self.usernameField.text;

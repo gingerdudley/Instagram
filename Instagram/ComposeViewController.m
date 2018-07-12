@@ -102,14 +102,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
-    // Get the image captured by the UIImagePickerController
-    //UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    
-    //editing the image???? 
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-    
-    // Do something with the images (based on your use case)
-    //self.savedImage = originalImage;
     self.savedImage = editedImage;
     self.uploadedImage.image = self.savedImage;
     //self.uploadedImage.image = originalImage;

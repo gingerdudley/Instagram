@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "User.h"
 
-@interface ProfileGridViewController : UIViewController
+//@interface ProfileGridViewController : UIViewController
+//adding image picker for profile picture
+@interface ProfileGridViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-//@property (weak, nonatomic) Post *post;
+@property Post *post;
+
+@property User *user;
 
 @end

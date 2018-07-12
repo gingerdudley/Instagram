@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Parse.h"
+#import "User.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,7 @@
     }];
     
     [Parse initializeWithConfiguration:config];
+    
     
     if (PFUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

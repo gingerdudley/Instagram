@@ -8,6 +8,7 @@
 
 #import "Post.h"
 #import "Parse/Parse.h"
+
 //#import "NSDate+TimeAgo.h"
 
 @implementation Post
@@ -31,22 +32,13 @@
     Post *newPost = [Post new];
     //not working with the PFObject
     newPost.image = [self getPFFileFromImage:image];
+    //newPost.author = [PFUser currentUser];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
-    //changing formatting of date:
-    //NSString *ago = [newPost.createdAt timeAgo];
-    //newPost.createdAt = ago;
-    
-    
-    //adding bool for liked aspect
     newPost.liked = NO;
-
-//    NSString *createdAtOriginalString = createdAt;
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    
 
     [newPost saveInBackgroundWithBlock: completion];
 

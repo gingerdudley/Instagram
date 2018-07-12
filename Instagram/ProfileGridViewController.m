@@ -11,11 +11,25 @@
 #include "ProfilePostCell.h"
 #import "ProfileHeaderView.h"
 #import "DetailsViewController.h"
+#import "Post.h"
+#import "ParseUI/ParseUI.h"
+#import "User.h"
 
 @interface ProfileGridViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+//adding user array
+//@property (strong, nonatomic) User *user;
+
+
+//adding a profile picture
+
+//@property (strong, nonatomic) UIImage *savedImage;
+@property (strong, nonatomic) PFFile *savedImage;
+//@property (weak, nonatomic) IBOutlet PFImageView *profilePicture;
+
 
 
 @end
@@ -29,6 +43,7 @@
     self.collectionView.dataSource = self;
     
     [self fetchPosts];
+    [self fetchUser];
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     CGFloat postersPerline = 3;
@@ -46,19 +61,9 @@
 
 -(void)fetchPosts{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    
-    //refine this query into a smaller query that has the conditional of being posted by the user??
-    
-    //query constraints- look up in documentation
-    
-    //filtering out the query
-    //[query includeKey:@"author"];
-    //[query whereKey:@"author" notEqualTo:[PFUser currentUser]];
     [query whereKey:@"author" equalTo:[PFUser currentUser]];
     //query.limit = 20;
-    
-    
-    //might need to ass this back in later so the query has the full details
+
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
     
@@ -73,24 +78,31 @@
     
 }
 
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//    return self.posts.count;
-//}
+-(void)fetchUser{
+    PFQuery *query = [User query];
+    [query whereKey:@"username" equalTo:[PFUser currentUser].username];
+    [query includeKey:@"profilePicture"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+        if (users != nil) {
+            self.user = [users firstObject];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.collectionView reloadData];
+    }];
+}
+
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    //NSLog(@"%lu", self.posts.count);
     return self.posts.count;
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ProfilePostCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProfilePostCell" forIndexPath:indexPath];
-    
     cell.post = self.posts[indexPath.item];
-    
     return cell;
 }
 
-//adding the resuable header to the collection view
-//- (UICollectionViewReusableView *)collectionView:
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     
     ProfileHeaderView *header = nil;
@@ -99,17 +111,47 @@
         
         header.postNumberLabel.text = [[NSString stringWithFormat:@"%lu", self.posts.count] stringByAppendingString:@" posts"];
         header.usernameLabel.text = [PFUser currentUser].username;
-        //making the profile picture a circle
         header.profilePictureImageView.layer.cornerRadius = header.profilePictureImageView.frame.size.width / 2;
         header.profilePictureImageView.clipsToBounds = YES;
-        //adding a border around the image view
         header.profilePictureImageView.layer.borderWidth = 3.0f;
         header.profilePictureImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        //header.profilePictureImageView.layer.borderColor = [UIColor colorWithRed:135 green:206 blue:250 alpha:1].CGColor;
+        
+        header.profilePictureImageView.file = self.user.profilePicture;
+        [header.profilePictureImageView loadInBackground];
         
         
     }
     return header;
+}
+
+- (IBAction)didTapEdit:(id)sender {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+   self.user.profilePicture = [Post getPFFileFromImage:editedImage];
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        //have user data save
+        NSLog(@"sgvdkw");
+        [self dismissViewControllerAnimated:YES completion:^{
+            //[self.collectionView reloadData];
+        }];
+        [self.collectionView reloadData];
+    }];
 }
 
 
@@ -131,6 +173,7 @@
     
     
 }
+
 
 
 @end

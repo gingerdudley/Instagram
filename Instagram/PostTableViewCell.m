@@ -42,11 +42,27 @@
     self.profileImageView.layer.borderWidth = 3.0f;
     self.profileImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
+    //checking to see profile image if it loads
+    PFFile *holderFile = [PFUser currentUser][@"profilePicture"];
+    //PFFile *holderFile = self.user.profilePicture;
+    //PFFile *holderFile = self.user.profilePicture;
+    //PFFile *holderFiler = self.post.author
+    //self.profileImageView. = holderFile
+    [holderFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!data) {
+            return NSLog(@"%@", error);
+        }
+        self.profileImageView.image = [UIImage imageWithData:data];
+    }];
+    //self.profileImageView = [PFUser currentUser][@"profilePicture"];
+    //NSLog(@"%@", [PFUser currentUser][@"profilePicture"]);
+    
     [self.usernameBottomLabel sizeToFit];
     [self.usernameTopLabel sizeToFit];
     [self.likeCountLabel sizeToFit];
     [self.captionLabel sizeToFit];
-    [self.postImage loadInBackground];    
+    [self.postImage loadInBackground];
+    [self.profileImageView loadInBackground];
     
 }
 - (IBAction)didTapLike:(id)sender {
