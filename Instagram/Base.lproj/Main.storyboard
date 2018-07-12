@@ -139,7 +139,7 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MgF-ZT-4q0">
                                                     <rect key="frame" x="8" y="8" width="56" height="56"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="56" id="3xF-gQ-Zsr"/>
                                                         <constraint firstAttribute="height" constant="56" id="fxZ-2m-UHA"/>
@@ -425,7 +425,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWL-VP-WEj">
                                 <rect key="frame" x="10" y="500" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="empty heart"/>
+                                <state key="normal" title="Button" image="emptyheart"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvK-fA-uD8">
                                 <rect key="frame" x="88" y="499" width="40" height="31"/>
@@ -529,7 +529,6 @@
     </scenes>
     <resources>
         <image name="comment" width="131" height="108"/>
-        <image name="empty heart" width="685" height="547"/>
         <image name="emptyheart" width="685" height="547"/>
         <image name="feed_tab" width="25" height="25"/>
         <image name="image_placeholder" width="375" height="375"/>

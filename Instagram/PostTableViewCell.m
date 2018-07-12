@@ -32,6 +32,10 @@
     
     self.likeCountLabel.text = [[NSString stringWithFormat:@"%@", post.likeCount] stringByAppendingString:@" likes"];
     self.createdAtLabel.text = [NSString stringWithFormat:@"%@", post.createdAt];
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.clipsToBounds = YES;
+    self.profileImageView.layer.borderWidth = 3.0f;
+    self.profileImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
     [self.usernameBottomLabel sizeToFit];
     [self.usernameTopLabel sizeToFit];
