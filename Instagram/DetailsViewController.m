@@ -43,6 +43,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)didTapLike:(id)sender {
+    if (self.post.liked) {
+        [self.post decrementLike];
+        self.post.liked = NO;
+    }
+    else{
+        [self.post incrementLike];
+        self.post.liked = YES;
+    }
+    [self refreshData];
+    
+}
+
+-(void)refreshData{
+    self.likesLabel.text = [[NSString stringWithFormat:@"%@", self.post.likeCount] stringByAppendingString:@" likes"];
+    
+    if (self.post.liked) {
+        UIImage *likeButtonImage = [UIImage imageNamed:@"filledheart"];
+        [self.likeButton setImage:likeButtonImage forState:UIControlStateNormal];
+    }
+    else{
+        UIImage *likeButtonImage = [UIImage imageNamed:@"emptyheart"];
+        [self.likeButton setImage:likeButtonImage forState:UIControlStateNormal];
+    }
+}
+
+
 /*
 #pragma mark - Navigation
 

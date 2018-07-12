@@ -448,6 +448,9 @@
                                 <rect key="frame" x="10" y="500" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="emptyheart"/>
+                                <connections>
+                                    <action selector="didTapLike:" destination="hDH-kI-JQr" eventType="touchUpInside" id="9rx-Ev-cef"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvK-fA-uD8">
                                 <rect key="frame" x="88" y="499" width="40" height="31"/>
@@ -482,6 +485,7 @@
                     <connections>
                         <outlet property="bottomUsernameLabel" destination="cMn-7M-Tr9" id="IWI-za-AId"/>
                         <outlet property="captionLabel" destination="ZLq-yb-XTB" id="dbZ-ax-MLa"/>
+                        <outlet property="likeButton" destination="oWL-VP-WEj" id="gLC-i5-CB0"/>
                         <outlet property="likesLabel" destination="Dps-WD-CHM" id="x5m-di-gh4"/>
                         <outlet property="postImageView" destination="MsX-z0-fYg" id="a1J-9y-lWo"/>
                         <outlet property="profilePicImage" destination="z1c-l0-1Jv" id="o9R-Ju-2Gu"/>

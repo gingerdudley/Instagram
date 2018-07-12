@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicImage;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 
 @end
