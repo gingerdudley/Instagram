@@ -24,7 +24,9 @@
     //self.postImageView = [self.post getPFFileFromImage:image];
     self.postImageView.file = self.post.image;
     self.topUsernameLabel.text = self.post.author.username;
+    [self.topUsernameLabel sizeToFit];
     self.bottomUsernameLabel.text = self.post.author.username;
+    [self.bottomUsernameLabel sizeToFit];
     self.captionLabel.text = self.post.caption;
     //NSLog(@"%@", self.post.likeCount);
     self.likesLabel.text = [[NSString stringWithFormat:@"%@", self.post.likeCount] stringByAppendingString:@" likes"];

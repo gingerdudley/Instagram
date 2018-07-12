@@ -245,6 +245,7 @@
                                             <outlet property="profileImageView" destination="MgF-ZT-4q0" id="FFN-3a-C5E"/>
                                             <outlet property="usernameBottomLabel" destination="tfi-MZ-TDC" id="hSg-Wz-Cdi"/>
                                             <outlet property="usernameTopLabel" destination="1oH-cQ-NdQ" id="j6V-PE-TmJ"/>
+                                            <segue destination="hDH-kI-JQr" kind="show" id="3ru-d9-8N4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -489,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zY-Dl-bVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5836" y="900.89955022488766"/>
+            <point key="canvasLocation" x="3782" y="1173"/>
         </scene>
         <!--Home-->
         <scene sceneID="dO0-PI-Par">
@@ -557,4 +558,7 @@
         <image name="profile_tab" width="25" height="25"/>
         <image name="whiteinstagram" width="1785" height="612"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="3ru-d9-8N4"/>
+    </inferredMetricsTieBreakers>
 </document>
