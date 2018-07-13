@@ -42,7 +42,8 @@
 //adding a segue and tap gesture from users profile pic
 @protocol ProfileTabelViewCellDelegate
 
--(void)postCell:(PostTableViewCell *) postCell didTap: (User *)user;
+//-(void)postCell:(PostTableViewCell *) postCell didTap: (User *)user;
+-(void)postCell:(PostTableViewCell *) postCell didTap: (Post *)post;
 
 @end
 

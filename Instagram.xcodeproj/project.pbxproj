@@ -13,6 +13,8 @@
 		4C14EF5220F6A94900872802 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF5120F6A94900872802 /* DetailsViewController.m */; };
 		4C14EF5820F8073100872802 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF5720F8073100872802 /* User.m */; };
 		4C14EF5B20F9580900872802 /* timelineProfileGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF5A20F9580900872802 /* timelineProfileGridViewController.m */; };
+		4C14EF5E20F95A2600872802 /* timelineProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF5D20F95A2600872802 /* timelineProfileCell.m */; };
+		4C14EF6120F95A4D00872802 /* timelineProfileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF6020F95A4D00872802 /* timelineProfileHeader.m */; };
 		4C20249D20F40A6900E6E98D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20249C20F40A6900E6E98D /* AppDelegate.m */; };
 		4C2024A020F40A6900E6E98D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20249F20F40A6900E6E98D /* ViewController.m */; };
 		4C2024A320F40A6900E6E98D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2024A120F40A6900E6E98D /* Main.storyboard */; };
@@ -61,6 +63,10 @@
 		4C14EF5720F8073100872802 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4C14EF5920F9580900872802 /* timelineProfileGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timelineProfileGridViewController.h; sourceTree = "<group>"; };
 		4C14EF5A20F9580900872802 /* timelineProfileGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = timelineProfileGridViewController.m; sourceTree = "<group>"; };
+		4C14EF5C20F95A2600872802 /* timelineProfileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timelineProfileCell.h; sourceTree = "<group>"; };
+		4C14EF5D20F95A2600872802 /* timelineProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = timelineProfileCell.m; sourceTree = "<group>"; };
+		4C14EF5F20F95A4D00872802 /* timelineProfileHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timelineProfileHeader.h; sourceTree = "<group>"; };
+		4C14EF6020F95A4D00872802 /* timelineProfileHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = timelineProfileHeader.m; sourceTree = "<group>"; };
 		4C20249820F40A6900E6E98D /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C20249B20F40A6900E6E98D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C20249C20F40A6900E6E98D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -186,6 +192,10 @@
 				4C14EF4E20F6873D00872802 /* ProfileHeaderView.m */,
 				4C14EF5920F9580900872802 /* timelineProfileGridViewController.h */,
 				4C14EF5A20F9580900872802 /* timelineProfileGridViewController.m */,
+				4C14EF5C20F95A2600872802 /* timelineProfileCell.h */,
+				4C14EF5D20F95A2600872802 /* timelineProfileCell.m */,
+				4C14EF5F20F95A4D00872802 /* timelineProfileHeader.h */,
+				4C14EF6020F95A4D00872802 /* timelineProfileHeader.m */,
 				4C14EF5020F6A94900872802 /* DetailsViewController.h */,
 				4C14EF5120F6A94900872802 /* DetailsViewController.m */,
 				4C2024A420F40A6900E6E98D /* Assets.xcassets */,
@@ -449,11 +459,13 @@
 				4C14EF5820F8073100872802 /* User.m in Sources */,
 				4CDAC15E20F417B300B3E7D4 /* LoginViewController.m in Sources */,
 				4CB62CE420F524C7009B2ADD /* PostTableViewCell.m in Sources */,
+				4C14EF6120F95A4D00872802 /* timelineProfileHeader.m in Sources */,
 				4C14EF4A20F5C49800872802 /* ProfileGridViewController.m in Sources */,
 				4C14EF5220F6A94900872802 /* DetailsViewController.m in Sources */,
 				4C14EF4F20F6873D00872802 /* ProfileHeaderView.m in Sources */,
 				4C14EF4720F56E9500872802 /* ProfilePostCell.m in Sources */,
 				4C2024A020F40A6900E6E98D /* ViewController.m in Sources */,
+				4C14EF5E20F95A2600872802 /* timelineProfileCell.m in Sources */,
 				4C2024AB20F40A6900E6E98D /* main.m in Sources */,
 				4C14EF5B20F9580900872802 /* timelineProfileGridViewController.m in Sources */,
 				4CDAC16420F4299900B3E7D4 /* ComposeViewController.m in Sources */,

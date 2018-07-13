@@ -106,7 +106,11 @@
 - (void) didTapUserProfile:(UITapGestureRecognizer *)sender{
     // TODO: Call method on delegate
     //is this the right syntax??? passing the author of the post (user object) to the new view controller
-    [self.delegate postCell:self didTap:self.post.author];
+    //what do they send here, aka what did they tap to send??
+    //[self.delegate postCell:self didTap:self.user.username];
+    //[self.delegate postCell:self didTap:self.user];
+    
+    [self.delegate postCell:self didTap:self.post];
 }
 
 

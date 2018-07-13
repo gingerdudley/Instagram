@@ -118,9 +118,13 @@
 }
 
 //adding method for post table view cell
--(void)postCell:(PostTableViewCell *)postCell didTap:(User *)user{
+//-(void)postCell:(PostTableViewCell *)postCell didTap:(User *)user{
+//    //segue to the new view controller!
+//    [self performSegueWithIdentifier:@"timelineProfileSegue" sender:user];
+//}
+-(void)postCell:(PostTableViewCell *)postCell didTap:(Post *)post{
     //segue to the new view controller!
-    [self performSegueWithIdentifier:@"timelineProfileSegue" sender:user];
+    [self performSegueWithIdentifier:@"timelineProfileSegue" sender:post];
 }
 
 
@@ -141,9 +145,14 @@
         detailsViewController.post = post;
         
     }
-    else if ([sender isKindOfClass:[User class]]){
+//    else if ([sender isKindOfClass:[User class]]){
+//        timelineProfileGridViewController *profileController = [segue destinationViewController];
+//        profileController.user = sender;
+//
+//    }
+    else if ([sender isKindOfClass:[Post class]]){
         timelineProfileGridViewController *profileController = [segue destinationViewController];
-        profileController.user = sender;
+        profileController.post = sender;
     }
 }
 

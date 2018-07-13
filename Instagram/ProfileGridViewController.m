@@ -19,19 +19,7 @@
 
 @property (strong, nonatomic) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
-//adding user array
-//@property (strong, nonatomic) User *user;
-
-
-//adding a profile picture
-
-//@property (strong, nonatomic) UIImage *savedImage;
 @property (strong, nonatomic) PFFile *savedImage;
-//@property (weak, nonatomic) IBOutlet PFImageView *profilePicture;
-
-
-
 @end
 
 @implementation ProfileGridViewController

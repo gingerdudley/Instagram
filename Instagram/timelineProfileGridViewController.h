@@ -12,6 +12,8 @@
 
 @interface timelineProfileGridViewController : UIViewController
 
+@property Post *post;
+
 @property (strong, nonatomic) User *user;
 
 @end
