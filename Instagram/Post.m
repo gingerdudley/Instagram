@@ -8,6 +8,7 @@
 
 #import "Post.h"
 #import "Parse/Parse.h"
+#import "User.h"
 
 //#import "NSDate+TimeAgo.h"
 
@@ -32,8 +33,8 @@
     Post *newPost = [Post new];
     //not working with the PFObject
     newPost.image = [self getPFFileFromImage:image];
-    //newPost.author = [PFUser currentUser];
-    newPost.author = [PFUser currentUser];
+    newPost.author = [User currentUser];
+    //newPost.author = [User currentUser];
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);

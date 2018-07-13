@@ -23,6 +23,22 @@
     // Configure the view for the selected state
 }
 
+//-(void)setUser:(User *)user{
+//    _user = user;
+//
+//}
+//-(void)setUser:(User *)user{
+//    _user = user;
+//    self.user = [PFUser currentUser];
+//    PFFile *holderFile = self.user.profilePicture;
+//    [holderFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//        if (!data) {
+//            return NSLog(@"%@", error);
+//        }
+//        self.profileImageView.image = [UIImage imageWithData:data];
+//    }];
+//}
+
 - (void)setPost:(Post *)post{
     _post = post;
     self.postImage.file = post.image;
@@ -42,12 +58,7 @@
     self.profileImageView.layer.borderWidth = 3.0f;
     self.profileImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
-    //checking to see profile image if it loads
-    PFFile *holderFile = [PFUser currentUser][@"profilePicture"];
-    //PFFile *holderFile = self.user.profilePicture;
-    //PFFile *holderFile = self.user.profilePicture;
-    //PFFile *holderFiler = self.post.author
-    //self.profileImageView. = holderFile
+    PFFile *holderFile = self.post.author.profilePicture;
     [holderFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!data) {
             return NSLog(@"%@", error);

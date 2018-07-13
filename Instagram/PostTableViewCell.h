@@ -29,7 +29,7 @@
 //@property (nonatomic, strong) PFUser *user;
 
 @property (nonatomic, strong) Post *post;
-@property User *user;
+@property (nonatomic, strong) User *user;
 
 
 @end
