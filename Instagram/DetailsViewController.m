@@ -35,6 +35,15 @@
     self.profilePicImage.layer.borderWidth = 3.0f;
     self.profilePicImage.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
+    PFFile *holderFile = self.post.author.profilePicture;
+    //NSLog(@"%@", self.post.author.profilePicture);
+    [holderFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!data) {
+            return NSLog(@"%@", error);
+        }
+        self.profilePicImage.image = [UIImage imageWithData:data];
+    }];
+    
     
 }
 

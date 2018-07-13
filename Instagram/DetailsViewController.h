@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "Parse.h"
 #import "ParseUI/ParseUI.h"
 
 @interface DetailsViewController : UIViewController
@@ -19,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *bottomUsernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicImage;
+@property (weak, nonatomic) IBOutlet PFImageView *profilePicImage;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 
