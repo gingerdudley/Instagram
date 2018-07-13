@@ -11,8 +11,6 @@
 
 @interface DetailsViewController ()
 
-//trying to send a post to the details view controller
-//@property (nonatomic, strong) Post *post;
 
 @end
 
@@ -21,14 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //self.postImageView = [self.post getPFFileFromImage:image];
     self.postImageView.file = self.post.image;
     self.topUsernameLabel.text = self.post.author.username;
     [self.topUsernameLabel sizeToFit];
     self.bottomUsernameLabel.text = self.post.author.username;
     [self.bottomUsernameLabel sizeToFit];
     self.captionLabel.text = self.post.caption;
-    //NSLog(@"%@", self.post.likeCount);
     self.likesLabel.text = [[NSString stringWithFormat:@"%@", self.post.likeCount] stringByAppendingString:@" likes"];
     self.profilePicImage.layer.cornerRadius = self.profilePicImage.frame.size.width / 2;
     self.profilePicImage.clipsToBounds = YES;
@@ -36,7 +32,6 @@
     self.profilePicImage.layer.borderColor = [UIColor lightGrayColor].CGColor;
     
     PFFile *holderFile = self.post.author.profilePicture;
-    //NSLog(@"%@", self.post.author.profilePicture);
     [holderFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!data) {
             return NSLog(@"%@", error);

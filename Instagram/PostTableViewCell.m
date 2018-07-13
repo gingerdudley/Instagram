@@ -15,6 +15,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+     UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapUserProfile:)];
+    [self.profileImageView addGestureRecognizer:profileTapGestureRecognizer];
+    [self.profileImageView setUserInteractionEnabled:YES];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -44,14 +48,12 @@
     self.postImage.file = post.image;
     self.captionLabel.text = post.caption;
     
-    //self.user = post.author;
     self.usernameTopLabel.text = post.author.username;
     self.usernameBottomLabel.text = post.author.username;
     
     self.likeCountLabel.text = [[NSString stringWithFormat:@"%@", post.likeCount] stringByAppendingString:@" likes"];
     
     NSString *ago = [post.createdAt timeAgo];
-    //newPost.createdAt = ago;
     self.createdAtLabel.text = [NSString stringWithFormat:@"%@", ago];
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.clipsToBounds = YES;
@@ -65,8 +67,6 @@
         }
         self.profileImageView.image = [UIImage imageWithData:data];
     }];
-    //self.profileImageView = [PFUser currentUser][@"profilePicture"];
-    //NSLog(@"%@", [PFUser currentUser][@"profilePicture"]);
     
     [self.usernameBottomLabel sizeToFit];
     [self.usernameTopLabel sizeToFit];
@@ -85,8 +85,6 @@
         [self.post incrementLike];
         self.post.liked = YES;
     }
-   
-    //self.likeButton.imageView =
     [self refreshData];
 }
 
@@ -102,8 +100,13 @@
         [self.likeButton setImage:likeButtonImage forState:UIControlStateNormal];
     }
     
-    //[self.favoriteButton setImage:favoriteButtonImage forState:UIControlStateNormal];
-    
+}
+
+//adding a segue to a details page from the storyboard
+- (void) didTapUserProfile:(UITapGestureRecognizer *)sender{
+    // TODO: Call method on delegate
+    //is this the right syntax??? passing the author of the post (user object) to the new view controller
+    [self.delegate postCell:self didTap:self.post.author];
 }
 
 

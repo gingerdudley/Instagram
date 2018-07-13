@@ -12,6 +12,7 @@
 		4C14EF4F20F6873D00872802 /* ProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF4E20F6873D00872802 /* ProfileHeaderView.m */; };
 		4C14EF5220F6A94900872802 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF5120F6A94900872802 /* DetailsViewController.m */; };
 		4C14EF5820F8073100872802 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF5720F8073100872802 /* User.m */; };
+		4C14EF5B20F9580900872802 /* timelineProfileGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C14EF5A20F9580900872802 /* timelineProfileGridViewController.m */; };
 		4C20249D20F40A6900E6E98D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20249C20F40A6900E6E98D /* AppDelegate.m */; };
 		4C2024A020F40A6900E6E98D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20249F20F40A6900E6E98D /* ViewController.m */; };
 		4C2024A320F40A6900E6E98D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2024A120F40A6900E6E98D /* Main.storyboard */; };
@@ -58,6 +59,8 @@
 		4C14EF5120F6A94900872802 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		4C14EF5620F8073100872802 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		4C14EF5720F8073100872802 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		4C14EF5920F9580900872802 /* timelineProfileGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timelineProfileGridViewController.h; sourceTree = "<group>"; };
+		4C14EF5A20F9580900872802 /* timelineProfileGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = timelineProfileGridViewController.m; sourceTree = "<group>"; };
 		4C20249820F40A6900E6E98D /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C20249B20F40A6900E6E98D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C20249C20F40A6900E6E98D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				4C14EF4620F56E9500872802 /* ProfilePostCell.m */,
 				4C14EF4D20F6873D00872802 /* ProfileHeaderView.h */,
 				4C14EF4E20F6873D00872802 /* ProfileHeaderView.m */,
+				4C14EF5920F9580900872802 /* timelineProfileGridViewController.h */,
+				4C14EF5A20F9580900872802 /* timelineProfileGridViewController.m */,
 				4C14EF5020F6A94900872802 /* DetailsViewController.h */,
 				4C14EF5120F6A94900872802 /* DetailsViewController.m */,
 				4C2024A420F40A6900E6E98D /* Assets.xcassets */,
@@ -450,6 +455,7 @@
 				4C14EF4720F56E9500872802 /* ProfilePostCell.m in Sources */,
 				4C2024A020F40A6900E6E98D /* ViewController.m in Sources */,
 				4C2024AB20F40A6900E6E98D /* main.m in Sources */,
+				4C14EF5B20F9580900872802 /* timelineProfileGridViewController.m in Sources */,
 				4CDAC16420F4299900B3E7D4 /* ComposeViewController.m in Sources */,
 				4CDAC16120F41C1D00B3E7D4 /* HomeViewController.m in Sources */,
 				4C20249D20F40A6900E6E98D /* AppDelegate.m in Sources */,

@@ -12,6 +12,8 @@
 #import "Parse.h"
 #import "User.h"
 
+//adding for tap gesture
+@protocol ProfileTabelViewCellDelegate;
 
 @interface PostTableViewCell : UITableViewCell
 
@@ -31,5 +33,16 @@
 @property (nonatomic, strong) Post *post;
 @property (nonatomic, strong) User *user;
 
+//optional property for the delegate
+@property (nonatomic, weak) id<ProfileTabelViewCellDelegate> delegate;
+
 
 @end
+
+//adding a segue and tap gesture from users profile pic
+@protocol ProfileTabelViewCellDelegate
+
+-(void)postCell:(PostTableViewCell *) postCell didTap: (User *)user;
+
+@end
+

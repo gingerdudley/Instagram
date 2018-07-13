@@ -12,6 +12,7 @@
 #import "Post.h"
 #import "PostTableViewCell.h"
 #import "DetailsViewController.h"
+#import "timelineProfileGridViewController.h"
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -80,6 +81,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     cell.post = self.posts[indexPath.row];
+    
+    //setting cells delegate property
+    cell.delegate = self;
+    
     return cell;
 }
 
@@ -112,6 +117,12 @@
     [self performSegueWithIdentifier:@"composeSegue" sender:nil];
 }
 
+//adding method for post table view cell
+-(void)postCell:(PostTableViewCell *)postCell didTap:(User *)user{
+    //segue to the new view controller!
+    [self performSegueWithIdentifier:@"timelineProfileSegue" sender:user];
+}
+
 
 
 
@@ -129,6 +140,10 @@
         DetailsViewController *detailsViewController = [segue destinationViewController];
         detailsViewController.post = post;
         
+    }
+    else if ([sender isKindOfClass:[User class]]){
+        timelineProfileGridViewController *profileController = [segue destinationViewController];
+        profileController.user = sender;
     }
 }
 

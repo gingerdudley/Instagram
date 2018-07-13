@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostTableViewCell.h"
 
 //@interface HomeViewController : UIViewController<UITableViewDataSource>
-@interface HomeViewController : UIViewController
+//@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController<ProfileTabelViewCellDelegate>
 
 @end
